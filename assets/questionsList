@@ -1,4 +1,4 @@
-// 1. What type of doctor studies the heart?
+<!-- // 1. What type of doctor studies the heart?
 // a. Endocrinologist
 // b. Dermatologist
 // c. Cardiologist
@@ -38,4 +38,4 @@
 // - You will need to add a timer that deducts time for each answer answered incorrectly. 
 // - Your quiz should end if either the timer expires, or the end of the questions is reached. 
 // - You will need to set up a high scores section
-// - Save any corresponding scores to local storage
+// - Save any corresponding scores to local storage -->
