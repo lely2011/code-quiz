@@ -16,14 +16,26 @@
 // c. 70-120
 // d. 60-100
 
-// 4. What is the name of the lab test for cholesterol?
-// a. Lipid
-// b. CMP
-// c. Apolipoprotein
-// d. Aldosterone
+// 4. Which heart chamber pushes blood to the organs of the body?
+// a. left atrium
+// b. left ventricle
+// c. right atrium
+// d. Aldoright ventricle 
 
 // 5. How many chambers are in a heart?
 // a. 2
 // b. 6
 // c. 3
 // d. 4
+
+// TODO's:
+
+//good work on the html portion of this assignment. You used clean, semantic html. 
+// Your CSS is fairly clean and responsive. 
+// Javascript file:
+// - Javascript and APIs. The quiz displaying 
+// - Start quiz button, you will need to make sure the start quiz button is functional so that questions can be presented. 
+// - You will need to add a timer that deducts time for each answer answered incorrectly. 
+// - Your quiz should end if either the timer expires, or the end of the questions is reached. 
+// - You will need to set up a high scores section
+// - Save any corresponding scores to local storage

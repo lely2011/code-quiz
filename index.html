@@ -1,74 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz: Related to the Heart</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- Font link for Icons -->
-</head>
-<body class="body">
+  </head>
+  <body class="body">
     <!-- Start Quiz Button -->
     <div class="start_btn"><button>Start Quiz</button></div>
 
     <!-- Info Box -->
     <div class="info_box">
-        <div class="info_title">
-            <span>Here are some rules of the Quiz</span>
-        </div>
-        <div class="info_list">
-            <div class="info">1. You will have only <span>20 seconds</span> per each question.</div>
-            <div class="info">2. Once you select your answer, you can't reselect.</div>
-            <div class="info">3. You can't exit from the Quiz while you're playing.</div>
-            <div class="info">4. You'll get points on the basis of your correct answers.</div>
-        </div>
-        <div class="buttons">
-            <button class="quit">Exit Quiz</button>
-            <button class="restart">Continue</button>
-        </div>
+      <div class="info_title">
+        <span>Here are some rules of the Quiz</span>
+      </div>
+      <div class="info_list">
+        <div class="info">1. You will have only <span>20 seconds</span> per each question.</div>
+        <div class="info">2. Once you select your answer, you can't reselect.</div>
+        <div class="info">3. You can't exit from the Quiz while you're playing.</div>
+        <div class="info">4. You'll get points on correct answers.</div>
+      </div>
+      <div class="buttons">
+        <button class="quit">Exit Quiz</button>
+        <button class="restart">Continue</button>
+      </div>
     </div>
 
     <!-- Quiz Box -->
     <div class="quiz_box">
-        <header>
-            <div class="title">Quiz Studies of the Heart</div>
-            <div class="timer">
-                <div class="time_text">Time Left</div>
-                <div class="timer_sec">15</div>
-            </div>
-        </header>
-        <section>
-            <div class="question_text">
-                <span>1. What type of doctor studies the heart?</span>
-            </div>
-            <button>a. Endocrinologist</button>
-            <button>b. Dermatologist</button>
-            <button>c. Cardiologist</button>
-            <button>d. Neurologist</button>
+      <header>
+        <div class="title">Quiz Studies of the Heart</div>
+        <div class="timer">
+          <div class="time_left_text">Time Left</div>
+          <div class="timer_sec">20</div>
+        </div>
+        <div class="time_line"></div>
+      </header>
+      <section>
+        <div class="question_text">
+          <!-- Questions will be listed via JavaScript -->
+        </div>
+        <div class="option_list">
+          <!-- Answer options will be listed via JsavaScript -->
+        </div>
+      </section>
 
-            <div class="question_text">
-                <span>2. What is a common cholesterol medication used?</span>
-            </div>
-            <button>a. Metoprolol</button>
-            <button>b. Atorvastatin</button>
-            <button>c. Cetrizine</button>
-            <button>d. Levothyroxine</button>
-            <div class="question_text">
-                <span>3. What is the average heart beats per minute?</span>
-            </div>
-            <button>a. 50-90</button>
-            <button>b. 80-110</button>
-            <button>c. 70-120</button>
-            <button>d. 60-100</button>
-            <div class="question_text">
-                
-        </section>
-
-       
+      <!-- footer of QUiz -->
+      <footer>
+        <div class="total_questions">
+          <!-- Question Counter via JavaScript -->
+        </div>
+        <button class="next_btn">Next</button>
+      </footer>
     </div>
 
+    <!-- Result Boc -->
+    <div class="result_box">
+        <div class="complete_text">Quiz Complete</div>
+        <div class="score">
+        <!-- Score generated using JavaScript -->
+        </div>
+        <div class="buttons">
+            <button class="restart">Redo Quiz</button>
+            <button class="quit">Quit</button>
+        </div>
+    </div>
 
-</body>
+    <!-- Javascript for questions/answer options -->
+    <script src="js/question.js"></script>
+    
+    <!-- JavaScript for main quiz -->
+    <script src="js/scrpt.js"></script>
 
-
+  </body>
 </html>
+4

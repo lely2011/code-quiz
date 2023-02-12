@@ -1,9 +1,20 @@
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, sans-serif;
+}
+
+body{
+    background: lavender;
+}
+
 /* Start Quiz Button Styling */
 .start_btn button{
     font-size: 25px;
     font-weight: 500;
-    color: #007bff;
+    color: #61049b;
     padding: 15px 30px;
     outline: none;
     border: none;
@@ -12,20 +23,26 @@
     cursor: pointer;
 }
 
-.info_box,{
+.info_box{
     display: none;
     width: 540px;
     background: #fff;
     border-radius: 5px;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
 }
 
 .info_box .info_title{
+    display: flex;
     height: 60px;
     width: 100%;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid rgb(51, 10, 235);
     display: flex;
     align-items: center;
     padding: 0 35px;
+    border-radius: 5px 5px 0 0;
     font-size: 20px;
     font-weight: 600;
 }
@@ -42,7 +59,7 @@
 
 .info_box .info_list .info span{
     font-weight: 600;
-    color: #007bff;
+    color: #5100ff;
 }
 
 .info_box .buttons{
@@ -58,7 +75,7 @@
     margin: 0 5px;
     height: 40px;
     width: 100px;
-    border: 1px solid #007bff;
+    border: 1px solid rgb(82, 54, 183);
     border-radius: 5px;
     color: #fff;
     font-size: 16px;
@@ -68,7 +85,7 @@
 
 }
 
-.buttons button.restart{
+/*.buttons button.restart{
     color: #fff;
     background: #007bff;
 }
@@ -85,7 +102,7 @@
 .buttons button.quit:hover{
     color: #fff;
     background: #007bff;
-}
+}  */
 
 .quiz_box{
     width: 550px;
