@@ -52,7 +52,7 @@ restart_quiz.onclick = () =>{
     userScore = 0;
     widthValue = 0;
     showQuestions(queue_count);
-    queueCounter(queue_number);
+    // queueCounter(queue_number);
     clearInterval(counter);
     clearInterval(counterLine);
     startTimer(timeValue);
@@ -208,7 +208,7 @@ function startTimerLine(time){
 
 // - Save any corresponding scores to local storage
 
-function questionCounter(index){
+function updateScore(index){
     let totalQuestionCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
     bottom_question_counter.innerHTML = totalQuestionCounTag; 
 }
