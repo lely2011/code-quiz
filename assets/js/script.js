@@ -15,6 +15,7 @@ start_btn.onclick = () => {
     info_box.classList.add("activeInfo");
 }
 
+// exit btn function
 exit_btn.onclick = () => {
     info_box.classList.remove("activeInfo");
 }
@@ -24,16 +25,16 @@ continue_btn.onclick = () => {
     info_box.classList.remove("activeInfo");
     quiz_box.classList.add("activeQuiz");
     showQuestions(0);
-    queCounter(1);
-    startTimer(20);
+    questionCounter(1);
+    startTimer(10);
     startTimerLine(0);
 }
 
 // restart btn functions
 
-let timeValue = 20;
-let queue_count = 0;
-let queue_number = 1;
+let timeValue = 10;
+let question_count = 0;
+let question_number = 1;
 let userScore = 0;
 let counter;
 let counterLine;
@@ -46,19 +47,19 @@ const quit_quiz = result_box.querySelector(".buttons .quit");
 restart_quiz.onclick = () =>{
     quiz_box.classList.add("activeQuiz");
     result_box.classList.remove("activeResult");
-    timeValue = 20;
-    queue_count = 0;
-    queue_number = 1;
+    timeValue = 10;
+    question_count = 0;
+    question_number = 1;
     userScore = 0;
     widthValue = 0;
-    showQuestions(queue_count);
-    // queueCounter(queue_number);
+    showQuestions(question_count);
+    questionCounter(question_number);
     clearInterval(counter);
     clearInterval(counterLine);
     startTimer(timeValue);
     startTimerLine(widthValue);
     timeText.textContent = "Time Left";
-    next_btn.classList.remove("show")
+    next_btn.classList.remove("show");
 }
 
 // quit btn functions
@@ -69,20 +70,20 @@ quit_quiz.onclick = () => {
 // Next Question btn functions
 
 const next_btn = document.querySelector("footer .next_btn");
-const questionCounter = document.querySelector("footer .total_questions");
+const bottomQuestionCounter = document.querySelector("footer .total_questions");
 
 next_btn.onclick = ()=>{
-    if(queue_count < questions.length - 1) {
-        queue_count++;
-        queue_number;
-        showQuestions(queue_count);
-        queCounter(queue_number);
+    if(question_count < questions.length - 1) {
+        question_count++;
+        question_number++;
+        showQuestions(question_count);
+        questionCounter(question_number);
         clearInterval(counter);
         clearInterval(counterLine);
         startTimer(timeValue);
         startTimerLine(widthValue);
-        timeText.textContent = "Time Remaining";
-        next_btn.classList.remove("show")
+        timeText.textContent = "Time Left";
+        next_btn.classList.remove("show");
     }else{
         clearInterval(counter);
         clearInterval(counterLine);
@@ -94,20 +95,23 @@ next_btn.onclick = ()=>{
 function showQuestions(index){
     const question_text = document.querySelector(".question_text");
 
-    let que_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
+    let question_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
     let option_tag = '<div class="option"><span>'+ questions[index].options[0] +'</span></div>'
     + '<div class="option"><span>'+ questions[index].options[1] +'</span></div>'
     + '<div class="option"><span>'+ questions[index].options[2] +'</span></div>'
     + '<div class="option"><span>'+ questions[index].options[3] +'</span></div>';
-    question_text.innerHTML = que_tag; 
+    question_text.innerHTML = question_tag; 
     option_list.innerHTML = option_tag; 
 
     const option = option_list.querySelectorAll(".option");
 
-    for(i=0;i < option.length; i++){
+    for(i=0; i < option.length; i++){
         option[i].setAttribute("onclick", "optionSelected(this)");
     }
 }
+
+// let tickIconTag = ''
+// let crossIconTag = ''
 
 //if user clicked on option
 function optionSelected(answer){
@@ -120,18 +124,18 @@ function optionSelected(answer){
     if(userAnswers == correctAnswers){ 
         userScore += 1; 
         answer.classList.add("correct"); 
-        answer.insertAdjacentHTML("beforeend", tickIconTag);
+        // answer.insertAdjacentHTML("beforeend");
         console.log("Correct Answer");
         console.log("Your correct answers = " + userScore);
     }else{
         answer.classList.add("incorrect"); 
-        answer.insertAdjacentHTML("beforeend", crossIconTag); 
+        // answer.insertAdjacentHTML("beforeend"); 
         console.log("Wrong Answer");
 
         for(i=0; i < allOptions; i++){
-            if(option_list.children[i].textContent == correcAns){ 
+            if(option_list.children[i].textContent == correctAnswers){ 
                 option_list.children[i].setAttribute("class", "option correct"); 
-                option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag);
+                option_list.children[i].insertAdjacentHTML("beforeend", /*need text output; original text: tickIconTag*/);
                 console.log("Auto selected correct answer.");
             }
         }
@@ -151,15 +155,15 @@ function showResults(){
     
     const scoreText = result_box.querySelector(".score_text");
     if (userScore > 3){ 
-        let scoreTag = '<span>and congrats! , You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
     }
     else if(userScore > 1){ 
-        let scoreTag = '<span>and nice , You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>and nice 😎, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
     }
     else{ 
-        let scoreTag = '<span>and sorry , You got only <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>and sorry 😐, You got only <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
     }
 }
@@ -208,7 +212,7 @@ function startTimerLine(time){
 
 // - Save any corresponding scores to local storage
 
-function updateScore(index){
-    let totalQuestionCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
-    bottom_question_counter.innerHTML = totalQuestionCounTag; 
+function questionCounter(index){
+    let totalQuestionCountTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
+    bottomQuestionCounter.innerHTML = totalQuestionCountTag; 
 }
