@@ -135,7 +135,7 @@ function optionSelected(answer){
         for(i=0; i < allOptions; i++){
             if(option_list.children[i].textContent == correctAnswers){ 
                 option_list.children[i].setAttribute("class", "option correct"); 
-                option_list.children[i].insertAdjacentHTML("beforeend", /*need text output; original text: tickIconTag*/);
+                // option_list.children[i].insertAdjacentHTML("beforeend", /*need text output; original text: tickIconTag*/);
                 console.log("Auto selected correct answer.");
             }
         }
@@ -156,15 +156,15 @@ function showResults(){
     const scoreText = result_box.querySelector(".score_text");
     if (userScore > 3){ 
         let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
-        scoreText.innerHTML = scoreTag;
+        // scoreText.innerHTML = scoreTag;
     }
     else if(userScore > 1){ 
         let scoreTag = '<span>and nice 😎, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
-        scoreText.innerHTML = scoreTag;
+        // scoreText.innerHTML = scoreTag;
     }
     else{ 
         let scoreTag = '<span>and sorry 😐, You got only <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
-        scoreText.innerHTML = scoreTag;
+        // scoreText.innerHTML = scoreTag;
     }
 }
 
